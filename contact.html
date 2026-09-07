@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LGA - Contact</title>
+
+  <style>
+    body {
+      background-color: #050005;
+      color: #ff2bd6;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    nav {
+      margin-bottom: 50px;
+    }
+
+    nav a {
+      color: #ff2bd6;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 10px #ff2bd6;
+    }
+
+    h1 {
+      font-size: 45px;
+      text-shadow: 0 0 10px #ff2bd6;
+    }
+
+    .contact {
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      border: 2px solid #ff2bd6;
+      border-radius: 25px;
+      box-shadow: 0 0 20px #ff2bd6;
+    }
+
+    input,
+    textarea {
+      width: 90%;
+      margin: 10px 0;
+      padding: 12px;
+      border: 2px solid #ff2bd6;
+      border-radius: 15px;
+      background: transparent;
+      color: white;
+      font-size: 16px;
+    }
+
+    textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    button {
+      background: transparent;
+      color: #ff2bd6;
+      border: 2px solid #ff2bd6;
+      border-radius: 30px;
+      padding: 12px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #ff2bd6;
+      color: #050005;
+      box-shadow: 0 0 15px #ff2bd6;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">ACCUEIL</a>
+    <a href="album.html">L'ALBUM</a>
+    <a href="apropos.html">À PROPOS</a>
+    <a href="actualites.html">ACTUALITÉS</a>
+    <a href="contact.html">CONTACT</a>
+  </nav>
+
+  <h1>CONTACT</h1>
+
+  <div class="contact">
+    <h2>Nous contacter</h2>
+
+    <form onsubmit="envoyerMessage(event)">
+      <input type="text" placeholder="Ton nom" required>
+
+      <input type="email" placeholder="Ton adresse e-mail" required>
+
+      <textarea placeholder="Ton message" required></textarea>
+
+      <br>
+
+      <button type="submit">ENVOYER</button>
+    </form>
+  </div>
+
+  <script>
+    function envoyerMessage(event) {
+      event.preventDefault();
+      alert("Merci pour ton message ! 🎵");
+    }
+  </script>
+
+</body>
+</html>
