@@ -62,3 +62,62 @@ footer .footer-title{font-family:'Allura',cursive;font-size:clamp(42px,6vw,70px)
  .page{padding:62px 18px 90px}.page h1{font-size:43px;letter-spacing:6px;margin-bottom:42px}.panel{padding:30px 20px;border-radius:22px}.panel h2{font-size:19px;letter-spacing:2.5px}.panel p{font-size:16px}.contact-grid{grid-template-columns:1fr;gap:35px}.contact-item{font-size:16px}
  footer{min-height:145px}
 }
+
+
+/* CONTACT — réseaux sociaux uniquement */
+.social-panel {
+  text-align: center;
+  padding: 42px 24px 48px;
+}
+.social-panel h2 {
+  margin-bottom: 34px;
+}
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.social-links a {
+  min-height: 88px;
+  border: 2px solid #ff20c8;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 0 14px rgba(255, 32, 200, .35);
+}
+.social-links a:hover {
+  box-shadow: 0 0 24px rgba(255, 32, 200, .75);
+}
+.social-icon {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff20c8;
+  font-size: 25px;
+  font-weight: 700;
+}
+.contact-logo {
+  margin: 42px auto 0;
+  color: #ff20c8;
+  font-family: Allura, cursive;
+  font-size: 76px;
+  line-height: 1;
+  text-shadow: 0 0 12px #ff20c8, 0 0 30px rgba(255,32,200,.7);
+}
+@media (max-width: 560px) {
+  .social-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+footer { display:none !important; }
