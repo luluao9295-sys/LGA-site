@@ -398,3 +398,7 @@ body.page-apropos .page > *, body.page-contact .page > * {position:relative; z-i
   background:#ff25d4;
   box-shadow:0 0 10px #ff25d4;
 }
+.progress-slider{
+  accent-color:#fff;
+  background:linear-gradient(to right,#fff 0%,#ff25d4 0%);
+}
