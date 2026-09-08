@@ -376,4 +376,7 @@ body.page-apropos .page > *, body.page-contact .page > * {position:relative; z-i
     width:44px;
     height:44px;
   }
+.progress-slider{
+  accent-color:#ff25d4;
+}
 }
