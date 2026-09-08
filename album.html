@@ -65,51 +65,114 @@
 <div class="track"><span>11 — REUSSITE</span><span>À venir</span></div>
 <div class="track"><span>12 — MON RÊVE</span><span>À venir</span></div>
 </div></section></main>
+
 <script>
-const player = document.querySelector('.lga-audio');
+const tracks = document.querySelectorAll('.track-audio');
+let currentTrack = 0;
 
-const button = document.querySelector('.play-btn');
+function setupTrack(track, index) {
+  const player = track.querySelector('.lga-audio');
+  const button = track.querySelector('.play-btn');
+  const slider = track.querySelector('.progress-slider');
+  const time = track.querySelector('.time');
+  const prev = track.querySelector('.prev-btn');
+  const next = track.querySelector('.next-btn');
 
-const slider = document.querySelector('.progress-slider');
+  button.addEventListener('click', () => {
+    if (player.paused) {
+      tracks.forEach((otherTrack, i) => {
+        if (i !== index) {
+          const otherPlayer = otherTrack.querySelector('.lga-audio');
+          const otherButton = otherTrack.querySelector('.play-btn');
 
-const time = document.querySelector('.time');
+          otherPlayer.pause();
+          otherButton.textContent = '▶';
+        }
+      });
 
-button.addEventListener('click', () => {
-  if (player.paused) {
-    player.play();
-    button.textContent = '❚❚';
-  } else {
+      currentTrack = index;
+      player.play();
+      button.textContent = '❚❚';
+    } else {
+      player.pause();
+      button.textContent = '▶';
+    }
+  });
+
+  player.addEventListener('timeupdate', () => {
+    if (player.duration) {
+      const percent = (player.currentTime / player.duration) * 100;
+
+      slider.value = percent;
+
+      slider.style.background =
+        `linear-gradient(to right, #fff ${percent}%, #ff25d4 ${percent}%)`;
+    }
+
+    const minutes = Math.floor(player.currentTime / 60);
+    const seconds = Math.floor(player.currentTime % 60)
+      .toString()
+      .padStart(2, '0');
+
+    time.textContent = minutes + ':' + seconds;
+  });
+
+  slider.addEventListener('input', () => {
+    if (player.duration) {
+      player.currentTime =
+        (slider.value / 100) * player.duration;
+    }
+  });
+
+  player.addEventListener('ended', () => {
+    button.textContent = '▶';
+    slider.value = 0;
+    slider.style.background =
+      'linear-gradient(to right, #fff 0%, #ff25d4 0%)';
+    time.textContent = '0:00';
+  });
+
+  prev.addEventListener('click', () => {
+    if (index > 0) {
+      changeTrack(index - 1);
+    }
+  });
+
+  next.addEventListener('click', () => {
+    if (index < tracks.length - 1) {
+      changeTrack(index + 1);
+    }
+  });
+}
+
+function changeTrack(index) {
+  tracks.forEach((track) => {
+    const player = track.querySelector('.lga-audio');
+    const button = track.querySelector('.play-btn');
+
     player.pause();
     button.textContent = '▶';
-  }
+  });
+
+  currentTrack = index;
+
+  const track = tracks[index];
+  const player = track.querySelector('.lga-audio');
+  const button = track.querySelector('.play-btn');
+
+  player.currentTime = 0;
+  player.play();
+  button.textContent = '❚❚';
+
+  track.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+}
+
+tracks.forEach((track, index) => {
+  setupTrack(track, index);
 });
-
-player.addEventListener('timeupdate', () => {
-  if (player.duration) {
-    const percent = (player.currentTime / player.duration) * 100;
-    slider.value = percent;
-    slider.style.background =
-      `linear-gradient(to right, #fff ${percent}%, #ff25d4 ${percent}%)`;
-  }
-
-  const minutes = Math.floor(player.currentTime / 60);
-  const seconds = Math.floor(player.currentTime % 60)
-    .toString()
-    .padStart(2, '0');
-
-  time.textContent = minutes + ':' + seconds;
-});
-
-slider.addEventListener('input', () => {
-  if (player.duration) {
-    player.currentTime = (slider.value / 100) * player.duration;
-  }
-});
-
-player.addEventListener('ended', () => {
-  button.textContent = '▶';
-  slider.value = 0;
-  time.textContent = '0:00';
-});
+</script>
 </script>
 </body></html>
