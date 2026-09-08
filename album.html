@@ -15,4 +15,43 @@
 <div class="track"><span>11 — REUSSITE</span><span>À venir</span></div>
 <div class="track"><span>12 — MON RÊVE</span><span>À venir</span></div>
 </div></section></main>
+<script>
+const player=document.querySelector('.lga-audio');
+const button=document.querySelector('.play-btn');
+const progress=document.querySelector('.progress');
+const fill=document.querySelector('.progress-fill');
+const time=document.querySelector('.time');
+
+button.addEventListener('click',()=>{
+  if(player.paused){
+    player.play();
+    button.textContent='❚❚';
+  }else{
+    player.pause();
+    button.textContent='▶';
+  }
+});
+
+player.addEventListener('timeupdate',()=>{
+  if(player.duration){
+    fill.style.width=(player.currentTime/player.duration*100)+'%';
+  }
+
+  const minutes=Math.floor(player.currentTime/60);
+  const seconds=Math.floor(player.currentTime%60).toString().padStart(2,'0');
+  time.textContent=minutes+':'+seconds;
+});
+
+progress.addEventListener('click',(e)=>{
+  if(player.duration){
+    const rect=progress.getBoundingClientRect();
+    player.currentTime=((e.clientX-rect.left)/rect.width)*player.duration;
+  }
+});
+
+player.addEventListener('ended',()=>{
+  button.textContent='▶';
+  fill.style.width='0%';
+});
+</script>
 </body></html>
