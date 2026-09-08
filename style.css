@@ -37,7 +37,7 @@ body{
 .site-banner img{
   display:block;
   width:100%;
-  height:clamp(150px,22vw,330px);
+  height:clamp(230px,30vw,360px);
   object-fit:cover;
   object-position:center;
 }
@@ -206,7 +206,7 @@ footer{display:none!important}
   .panel{padding:28px 20px}
 }
 @media(max-width:480px){
-  .site-banner img{height:170px}
+  .site-banner img{height:300px;object-fit:cover}
   .nav a{font-size:12px;letter-spacing:1.4px}
   .cards{grid-template-columns:1fr}
   .page{padding-top:55px}
