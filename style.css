@@ -297,3 +297,83 @@ body.page-apropos .page > *, body.page-contact .page > * {position:relative; z-i
     width:100%;
   }
 }
+.track-audio .track-info{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.track-audio .track-info span{
+  color:#fff;
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.track-audio .track-info small{
+  color:#c9c6d4;
+  font-size:11px;
+  letter-spacing:1.5px;
+}
+
+.play-btn{
+  width:48px;
+  height:48px;
+  border:0;
+  border-radius:50%;
+  background:#ff25d4;
+  color:#fff;
+  font-size:20px;
+  cursor:pointer;
+  box-shadow:0 0 12px rgba(255,37,212,.7);
+  flex-shrink:0;
+}
+
+.player-bar{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  width:100%;
+}
+
+.progress{
+  flex:1;
+  height:5px;
+  background:#3a303d;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  width:0%;
+  height:100%;
+  background:#ff25d4;
+  box-shadow:0 0 8px #ff25d4;
+}
+
+.time{
+  color:#c9c6d4;
+  font-size:12px;
+  min-width:38px;
+  text-align:right;
+}
+
+.lga-audio{
+  display:none;
+}
+
+@media(max-width:480px){
+  .track-audio .track-info span{
+    font-size:18px;
+  }
+
+  .track-audio .track-info small{
+    font-size:9px;
+  }
+
+  .play-btn{
+    width:44px;
+    height:44px;
+  }
+}
