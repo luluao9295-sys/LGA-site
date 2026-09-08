@@ -80,8 +80,8 @@ body{
   align-items:center;
   justify-content:center;
   background:
-    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.55)),
-    radial-gradient(circle at 50% 45%,rgba(255,37,212,.18),transparent 32%);
+    linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.68)),
+    url('fond-proposition-2.png') center center / cover no-repeat;
 }
 .hero-kicker{
   color:var(--pink);
