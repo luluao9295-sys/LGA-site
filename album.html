@@ -64,7 +64,10 @@ button.addEventListener('click', () => {
 
 player.addEventListener('timeupdate', () => {
   if (player.duration) {
-    slider.value = (player.currentTime / player.duration) * 100;
+    const percent = (player.currentTime / player.duration) * 100;
+    slider.value = percent;
+    slider.style.background =
+      `linear-gradient(to right, #fff ${percent}%, #ff25d4 ${percent}%)`;
   }
 
   const minutes = Math.floor(player.currentTime / 60);
