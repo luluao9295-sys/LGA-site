@@ -189,7 +189,7 @@ body{
 .social-logo{
   width:62px;height:62px;flex:0 0 62px;
   display:grid;place-items:center;border-radius:16px;
-  background:#111;color:#fff;font-size:28px;font-weight:800;
+  background:#111;color:#fff;font-size:28px;font-weight:800;overflow:hidden;
 }
 .social-link:nth-child(1) .social-logo{background:linear-gradient(135deg,#ffcf3f,#ff2d72,#833ab4)}
 .social-link:nth-child(2) .social-logo{background:#000;border:1px solid #fff}
@@ -249,3 +249,10 @@ body.page-apropos .page::before {background-image:url('apropos-fond.jpeg');}
 body.page-contact .page::before {background-image:url('contact-fond.jpeg');}
 body.page-actualites .page > *, body.page-album .page > *,
 body.page-apropos .page > *, body.page-contact .page > * {position:relative; z-index:1;}
+
+.social-logo img{
+  width:38px;
+  height:38px;
+  display:block;
+  object-fit:contain;
+}
