@@ -382,9 +382,19 @@ body.page-apropos .page > *, body.page-contact .page > * {position:relative; z-i
   accent-color:#ff25d4;
 }
 
-.progress-slider::-webkit-slider-runnable-track{
-  background:#ff25d4;
+.progress-slider{
+  -webkit-appearance:none;
+  appearance:none;
+  width:100%;
   height:5px;
+  background:#ff25d4;
+  border-radius:10px;
+  outline:none;
+}
+
+.progress-slider::-webkit-slider-runnable-track{
+  height:5px;
+  background:transparent;
   border-radius:10px;
 }
 
@@ -395,6 +405,7 @@ body.page-apropos .page > *, body.page-contact .page > * {position:relative; z-i
   height:18px;
   margin-top:-6px;
   border-radius:50%;
-  background:#ff25d4;
-  box-shadow:0 0 10px #ff25d4;
+  background:#fff;
+  box-shadow:0 0 10px #fff;
 }
+
