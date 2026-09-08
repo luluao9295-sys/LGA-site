@@ -30,7 +30,6 @@ body{
   padding:0;
   line-height:0;
   overflow:hidden;
-  border-top:2px solid var(--pink);
   border-bottom:2px solid var(--pink);
   background:#000;
 }
