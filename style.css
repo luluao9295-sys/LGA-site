@@ -256,3 +256,44 @@ body.page-apropos .page > *, body.page-contact .page > * {position:relative; z-i
   display:block;
   object-fit:contain;
 }
+.track-audio{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:12px;
+}
+
+.track-audio .track-info{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.track-audio .track-info span{
+  color:#fff;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.track-audio .track-info small{
+  color:var(--muted);
+  font-size:11px;
+  letter-spacing:1px;
+}
+
+.track-audio audio{
+  width:100%;
+  max-width:100%;
+  display:block;
+}
+
+@media(max-width:480px){
+  .track-audio{
+    padding:14px;
+  }
+
+  .track-audio audio{
+    width:100%;
+  }
+}
