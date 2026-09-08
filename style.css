@@ -106,14 +106,6 @@ footer .footer-title{font-family:'Allura',cursive;font-size:clamp(42px,6vw,70px)
   font-size: 25px;
   font-weight: 700;
 }
-.contact-logo {
-  margin: 42px auto 0;
-  color: #ff20c8;
-  font-family: Allura, cursive;
-  font-size: 76px;
-  line-height: 1;
-  text-shadow: 0 0 12px #ff20c8, 0 0 30px rgba(255,32,200,.7);
-}
 @media (max-width: 560px) {
   .social-links {
     grid-template-columns: 1fr;
