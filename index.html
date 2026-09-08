@@ -43,6 +43,35 @@ nav a:hover {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LGA - Épisode 1</title>
+
+<style>
+.lga-banner-footer {
+  margin: 50px 0 0;
+  padding: 0;
+  background: #000;
+  border-top: 1px solid #ff1493;
+  overflow: hidden;
+}
+.lga-banner-footer img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 700px) {
+  .lga-banner-footer {
+    margin-top: 35px;
+  }
+  .lga-banner-footer img {
+    max-height: 220px;
+    min-height: 120px;
+    object-fit: cover;
+  }
+}
+</style>
+
 </head>
 
 <body><nav>
@@ -61,5 +90,8 @@ nav a:hover {
   <button onclick="alert('🎵 Album bientôt disponible !')">
     Écouter l'album
   </button>
+
+<footer class="lga-banner-footer"><img src="banner-lga-episode1.png" alt="LGA - Épisode 1 — Bientôt disponible"></footer>
+
 </body>
 </html>
