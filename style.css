@@ -376,6 +376,25 @@ body.page-apropos .page > *, body.page-contact .page > * {position:relative; z-i
     width:44px;
     height:44px;
   }
+
 .progress-slider{
+  width:100%;
   accent-color:#ff25d4;
+}
+
+.progress-slider::-webkit-slider-runnable-track{
+  background:#ff25d4;
+  height:5px;
+  border-radius:10px;
+}
+
+.progress-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  appearance:none;
+  width:18px;
+  height:18px;
+  margin-top:-6px;
+  border-radius:50%;
+  background:#ff25d4;
+  box-shadow:0 0 10px #ff25d4;
 }
