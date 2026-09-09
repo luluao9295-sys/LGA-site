@@ -1,23 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
 :root{--pink:#ff25d4;--blue:#16c8ff;--red:#ff244c;--green:#00e878;--bg:#020204;--panel:#07070c;--white:#f8f7ff;--muted:#c9c6d4}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(circle at 50% 25%,rgba(139,77,255,.10),transparent 35%),radial-gradient(circle at 10% 80%,rgba(255,37,212,.08),transparent 30%),var(--bg);color:var(--white);font-family:Montserrat,Arial,sans-serif;min-width:320px}
+body{margin:0;background:radial-gradient(circle at 50% 25%,rgba(139,77,255,.10),transparent 35%),radial-gradient(circle at 10% 80%,rgba(255,37,212,.08),transparent 30%),var(--bg);color:var(--white);font-family:'Satoshi',Arial,sans-serif;min-width:320px}
 .site-banner{width:100%;margin:0;padding:0;line-height:0;overflow:hidden;border-bottom:2px solid var(--pink);background:#000}
 .site-banner img{display:block;width:100%;height:clamp(260px,32vw,460px);object-fit:cover;object-position:center}
 .nav{width:100%;display:flex;justify-content:center;align-items:center;gap:clamp(24px,4vw,75px);padding:24px 32px 28px;background:rgba(2,2,4,.97);border-bottom:1px solid rgba(255,37,212,.55);flex-wrap:nowrap}
-.nav a{position:relative;color:#fff;text-decoration:none;font-size:clamp(14px,1.35vw,20px);font-weight:600;letter-spacing:2px;padding:8px 4px;white-space:nowrap;flex:0 0 auto}
+.nav a{position:relative;color:#fff;text-decoration:none;font-size:clamp(14px,1.35vw,20px);font-weight:700;letter-spacing:2px;padding:8px 4px;white-space:nowrap;flex:0 0 auto}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:-9px;height:4px;background:var(--pink);box-shadow:0 0 10px var(--pink),0 0 24px var(--pink);transform:scaleX(0);transition:.2s}
 .nav a:hover::after,.nav a.active::after{transform:scaleX(1)}
 .hero{min-height:calc(100vh - 540px);padding:100px 6vw 130px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.68)),url('fond-proposition-2.png') center/cover no-repeat}
-.hero-kicker{color:var(--pink);letter-spacing:7px;font-size:20px;font-weight:600;margin-bottom:10px}
-.hero h1{margin:0;font-size:clamp(70px,10vw,150px);letter-spacing:12px;color:#fff;text-shadow:0 0 12px var(--pink),0 0 35px rgba(255,37,212,.8)}
-.hero h2{margin:20px 0 14px;font-size:clamp(28px,4vw,60px);letter-spacing:7px}.hero h2 span{color:var(--pink)}
+.hero-kicker{color:var(--pink);letter-spacing:7px;font-size:20px;font-weight:700;margin-bottom:10px}
+.hero h1{margin:0;font-size:clamp(70px,10vw,150px);letter-spacing:12px;color:#fff;text-shadow:0 0 12px var(--pink),0 0 35px rgba(255,37,212,.8);font-weight:900}
+.hero h2{margin:20px 0 14px;font-size:clamp(28px,4vw,60px);letter-spacing:7px;font-weight:700}.hero h2 span{color:var(--pink)}
 .hero p{max-width:850px;color:var(--muted);font-size:clamp(17px,1.6vw,23px);line-height:1.8}
 .cta{display:inline-flex;align-items:center;justify-content:center;margin-top:30px;min-width:300px;padding:18px 30px;border:2px solid var(--pink);border-radius:40px;color:#fff;text-decoration:none;font-weight:700;letter-spacing:2px;box-shadow:0 0 12px var(--pink),0 0 28px rgba(255,37,212,.4)}
 .cta:hover{background:var(--pink);color:#000}
 .page{width:100%;max-width:1450px;margin:0 auto;padding:90px clamp(30px,5vw,80px) 130px}
-.page-title{text-align:center;font-size:clamp(52px,7vw,100px);letter-spacing:9px;margin:0 0 65px;text-shadow:0 0 12px rgba(255,37,212,.7)}
+.page-title{text-align:center;font-size:clamp(52px,7vw,100px);letter-spacing:9px;margin:0 0 65px;text-shadow:0 0 12px rgba(255,37,212,.7);font-weight:900}
 .panel{background:linear-gradient(145deg,rgba(12,8,18,.96),rgba(3,3,7,.98));border:2px solid var(--pink);border-radius:28px;padding:clamp(35px,4vw,55px);box-shadow:0 0 18px rgba(255,37,212,.25)}
 .panel h2{color:var(--pink);letter-spacing:3px}.panel p{color:var(--muted);font-size:18px;line-height:1.8}
 .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}.card{min-height:220px;padding:30px 22px;border:2px solid var(--pink);border-radius:22px;text-align:center;background:rgba(5,5,10,.8);box-shadow:0 0 16px rgba(255,37,212,.25)}
