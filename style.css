@@ -317,29 +317,50 @@ body.page-apropos .page > *, body.page-contact .page > * {position:relative; z-i
   letter-spacing:1.5px;
 }
 
+
 .play-btn{
   width:48px;
   height:48px;
   border:2px solid #ff25d4;
   border-radius:50%;
-  background:#050505;
+  background:#02000a;
   color:#ff25d4;
   font-size:20px;
   cursor:pointer;
-  box-shadow:0 0 8px rgba(255,37,212,.8),
-             inset 0 0 8px rgba(255,37,212,.25);
+  box-shadow:0 0 12px #ff25d4;
   flex-shrink:0;
   transition:all .2s ease;
 }
 
 .play-btn:hover{
   background:#ff25d4;
-  color:#050505;
-  box-shadow:0 0 18px rgba(255,37,212,.9),
-             0 0 35px rgba(255,37,212,.35);
+  color:#02000a;
+  box-shadow:0 0 20px #ff25d4;
   transform:scale(1.05);
 }
 
+.player-actions{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  flex-shrink:0;
+}
+
+.skip-btn{
+  width:38px;
+  height:38px;
+  border:2px solid #ff25d4;
+  border-radius:50%;
+  background:#02000a;
+  color:#ff25d4;
+  font-size:22px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 10px rgba(255,37,212,.7);
+}
 .player-bar{
   display:flex;
   align-items:center;
