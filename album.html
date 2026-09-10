@@ -6,46 +6,34 @@
 <title>LGA — Album</title>
 <link rel="stylesheet" href="menu-lga.css">
 <style>
-:root{--pink:#ff2d95;--pink2:#ff70ba;--glass:rgba(10,5,10,.72)}
+:root{--pink:#ff2d95;--pink2:#ff78bb;--ink:#050305}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:100%;min-height:100%;background:#030205;color:#fff}
-body{overflow-x:hidden;font-family:Arial,Helvetica,sans-serif}
-.album-page{position:relative;width:100%;min-height:100svh;overflow:hidden;background:#030205}
-.album-bg{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;z-index:0}
-.album-shade{position:fixed;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,0,0,.10),rgba(0,0,0,.18) 42%,rgba(0,0,0,.40)),linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.16) 65%,rgba(0,0,0,.58));pointer-events:none}
+body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+.album-page{position:relative;min-height:100svh;overflow:hidden;background:#030205}
+.album-bg{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
+.album-shade{position:fixed;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(2,0,2,.86) 0%,rgba(5,0,4,.66) 33%,rgba(5,0,4,.18) 62%,rgba(0,0,0,.34) 100%),linear-gradient(180deg,rgba(0,0,0,.13),rgba(0,0,0,.32))}
 .lga-menu{position:relative;z-index:100}
-.album-content{position:relative;z-index:5;display:grid;grid-template-columns:minmax(280px,.92fr) minmax(520px,1.08fr);gap:clamp(28px,4vw,70px);align-items:center;width:min(1500px,92vw);margin:clamp(34px,5svh,72px) auto 140px}
-.album-brand{display:flex;flex-direction:column;justify-content:center;min-height:540px;padding-left:1vw}
-.album-brand .lga-word{font-size:clamp(72px,9vw,150px);line-height:.82;font-weight:900;font-style:italic;letter-spacing:-.08em;color:#ff3f9f;text-shadow:0 0 24px rgba(255,45,149,.25)}
-.album-brand .episode{margin-top:26px;font-size:clamp(22px,2.3vw,38px);font-weight:300;letter-spacing:.42em;color:#fff}
-.album-brand .line{width:min(220px,55%);height:2px;margin-top:28px;background:linear-gradient(90deg,var(--pink),var(--pink2),transparent);box-shadow:0 0 14px rgba(255,45,149,.8)}
-.track-card{border:1px solid rgba(255,45,149,.30);border-radius:24px;background:linear-gradient(180deg,rgba(25,7,18,.82),rgba(4,3,5,.82));box-shadow:0 24px 70px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);overflow:hidden}
-.track-head{display:flex;align-items:center;justify-content:space-between;padding:24px 28px 18px;border-bottom:1px solid rgba(255,255,255,.06)}
-.track-head h1{font-size:clamp(24px,2vw,34px);font-weight:300;letter-spacing:.34em}
-.track-head span{font-size:14px;letter-spacing:.42em;color:#f6d8e7;white-space:nowrap}
-.tracks{padding:8px 12px 12px}
-.track{display:grid;grid-template-columns:42px 46px 1fr 58px 26px;align-items:center;gap:8px;min-height:47px;padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.07);transition:.16s ease}
-.track:last-child{border-bottom:0}
-.track:hover{background:rgba(255,45,149,.10)}
-.track.active{background:linear-gradient(90deg,rgba(255,30,120,.72),rgba(105,9,55,.34));border-radius:14px;border-bottom-color:transparent;box-shadow:inset 0 0 0 1px rgba(255,80,164,.28)}
-.play{width:30px;height:30px;border:1px solid rgba(255,255,255,.45);border-radius:50%;display:grid;place-items:center;font-size:11px;color:#fff;background:rgba(0,0,0,.28)}
-.track.active .play{background:#ff2d95;border-color:#ff8bc5;box-shadow:0 0 16px rgba(255,45,149,.55)}
-.num{font-size:14px;color:#ff9acb;letter-spacing:.08em}
-.title{font-size:clamp(13px,1.1vw,17px);letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.time{font-size:13px;text-align:right;color:#eee}
-.more{font-size:18px;text-align:center;color:#ddd;letter-spacing:.08em}
-.player{position:fixed;z-index:90;left:3.2vw;right:3.2vw;bottom:18px;min-height:92px;border:1px solid rgba(255,45,149,.34);border-radius:24px;background:linear-gradient(180deg,rgba(18,5,14,.90),rgba(3,2,4,.88));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:grid;grid-template-columns:minmax(180px,1fr) minmax(300px,2fr) minmax(150px,.8fr);align-items:center;padding:12px 20px;box-shadow:0 18px 45px rgba(0,0,0,.5)}
-.now{display:flex;align-items:center;gap:14px}.cover-mini{width:62px;height:62px;object-fit:cover;border-radius:9px;border:1px solid rgba(255,45,149,.36)}.now strong{font-size:17px;letter-spacing:.04em}.now small{display:block;margin-top:6px;color:#d9b9ca;letter-spacing:.08em}
-.controls{display:flex;flex-direction:column;gap:9px;align-items:center}.transport{display:flex;align-items:center;gap:25px}.transport button{border:0;background:none;color:#fff;font-size:23px;cursor:pointer}.transport .main{width:54px;height:54px;border:2px solid var(--pink);border-radius:50%;display:grid;place-items:center;color:#ff4ca5;box-shadow:0 0 20px rgba(255,45,149,.32)}.progress{width:82%;height:4px;border-radius:99px;background:rgba(255,255,255,.28);overflow:hidden}.progress span{display:block;width:24%;height:100%;background:linear-gradient(90deg,var(--pink),#ff8ac4)}
-.player-side{text-align:right;font-size:11px;letter-spacing:.24em;color:#ff5cae;line-height:1.35}
-@media(max-width:900px){body{overflow:auto}.album-bg{object-position:42% center}.album-content{grid-template-columns:1fr;width:min(92vw,720px);margin:26px auto 130px;gap:18px}.album-brand{min-height:auto;padding:18px 8px 4px}.album-brand .lga-word{font-size:70px}.album-brand .episode{font-size:20px;margin-top:12px}.track-head{padding:18px 18px 14px}.track-head h1{font-size:21px}.track-head span{font-size:10px}.track{grid-template-columns:34px 38px 1fr 46px 20px;min-height:43px}.player{left:9px;right:9px;bottom:8px;min-height:84px;grid-template-columns:1fr 1.5fr;padding:10px 12px;border-radius:20px}.cover-mini{width:52px;height:52px}.now strong{font-size:14px}.now small{font-size:10px}.player-side{display:none}.transport{gap:17px}.transport .main{width:46px;height:46px}.progress{width:92%}}
-@media(max-width:600px){.album-content{width:calc(100vw - 18px);margin-top:22px}.album-brand{padding-left:12px}.album-brand .lga-word{font-size:58px}.album-brand .episode{font-size:16px;letter-spacing:.35em}.track-card{border-radius:20px}.track-head{padding:16px 15px 12px}.track-head h1{font-size:18px;letter-spacing:.22em}.track-head span{font-size:9px;letter-spacing:.25em}.tracks{padding:6px}.track{grid-template-columns:30px 34px 1fr 40px 18px;gap:5px;padding:5px 4px;min-height:40px}.play{width:26px;height:26px;font-size:9px}.num,.time{font-size:11px}.title{font-size:12px}.more{font-size:15px}.player{grid-template-columns:1fr auto;min-height:78px}.cover-mini{width:46px;height:46px}.controls{align-items:flex-end}.progress{display:none}.transport{gap:10px}.transport button{font-size:18px}.transport .main{width:42px;height:42px}}
+.hero{position:relative;z-index:5;width:min(1540px,92vw);margin:clamp(22px,3.8svh,50px) auto 58px;display:grid;grid-template-columns:minmax(360px,520px) 1fr;gap:clamp(35px,6vw,100px);align-items:start}
+.left{padding:10px 0 0 4px}
+.episode-logo{display:block;width:min(390px,86%);max-height:210px;object-fit:contain;object-position:left center;filter:drop-shadow(0 0 22px rgba(255,45,149,.38));margin-bottom:10px}
+.kicker{margin-top:4px;font-size:13px;letter-spacing:.40em;color:#ff91c5;text-transform:uppercase}
+.available{margin-top:9px;font-size:13px;font-weight:700;letter-spacing:.35em;text-transform:uppercase}
+.actions{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin:28px 0 30px}.btn{height:52px;border-radius:999px;border:1px solid var(--pink);padding:0 28px;display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-size:12px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.btn.primary{background:linear-gradient(90deg,#ff75b9,#ff4ca5);color:#12000a;box-shadow:0 0 25px rgba(255,45,149,.35)}.btn.secondary{color:#fff;background:rgba(5,3,5,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.track-title{font-size:17px;letter-spacing:.45em;color:#ff68ad;margin-bottom:18px;text-transform:uppercase}
+.tracklist{width:100%;max-width:500px;border-top:1px solid rgba(255,255,255,.24)}
+.track{display:grid;grid-template-columns:34px minmax(0,1fr) 44px 24px;gap:10px;align-items:center;min-height:43px;border-bottom:1px solid rgba(255,255,255,.14);font-size:12px;letter-spacing:.13em;transition:.18s ease}.track .num{color:#cfc0c8}.track .name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.track .time{text-align:right;color:#ddd}.track .more{text-align:right;color:#ddd;font-size:17px;letter-spacing:0}.track.active{color:#ff4ba2;background:linear-gradient(90deg,rgba(255,45,149,.16),transparent)}.track.active .num:before{content:'▶';font-size:8px;margin-right:7px;color:var(--pink)}
+.tagline{margin-top:34px;padding-top:28px;position:relative;font-size:12px;line-height:1.8;letter-spacing:.30em;text-transform:uppercase;color:#fff}.tagline:before,.tagline:after{content:'';display:block;width:56px;height:2px;background:#ff8bc5;box-shadow:0 0 10px rgba(255,45,149,.5)}.tagline:before{position:absolute;top:0;left:0}.tagline:after{margin-top:24px}
+.right-space{min-height:720px}
+@media(max-width:900px){.album-bg{object-position:52% center}.album-shade{background:linear-gradient(180deg,rgba(3,0,3,.28) 0%,rgba(3,0,3,.48) 24%,rgba(3,0,3,.86) 58%,rgba(3,0,3,.96) 100%)}.hero{grid-template-columns:1fr;width:calc(100vw - 28px);margin-top:24px;gap:0}.left{padding:0 12px 32px}.episode-logo{width:min(360px,80vw);margin-top:10px}.actions{margin:22px 0 26px}.tracklist{max-width:none;background:rgba(4,2,4,.42);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}.right-space{display:none}}
+@media(max-width:600px){.hero{width:calc(100vw - 18px)}.left{padding-left:10px;padding-right:10px}.episode-logo{width:min(320px,78vw);max-height:160px}.kicker,.available{font-size:10px}.actions{gap:8px}.btn{height:46px;padding:0 20px;font-size:10px}.track-title{font-size:14px;margin-bottom:14px}.track{grid-template-columns:30px minmax(0,1fr) 38px 20px;gap:7px;min-height:39px;font-size:10px}.track .more{font-size:15px}.tagline{font-size:10px;margin-top:28px}}
 </style>
 </head>
 <body>
 <div class="album-page">
-  <img class="album-bg" src="ChatGPT%20Image%209%20sept.%202026%20a%CC%80%2020_30_16.png?v=1" alt="">
+  <img class="album-bg" src="ChatGPT%20Image%209%20sept.%202026%20a%CC%80%2020_30_16.png?v=2" alt="">
   <div class="album-shade"></div>
+
   <header class="lga-menu">
     <nav class="lga-nav">
       <a href="index.html">ACCUEIL</a>
@@ -56,43 +44,37 @@ body{overflow-x:hidden;font-family:Arial,Helvetica,sans-serif}
     </nav>
   </header>
 
-  <main class="album-content">
-    <section class="album-brand" aria-label="LGA Épisode 1">
-      <div class="lga-word">LGA</div>
-      <div class="episode">ÉPISODE 1</div>
-      <div class="line"></div>
-    </section>
+  <main class="hero">
+    <section class="left">
+      <img class="episode-logo" src="ChatGPT%20Image%2010%20sept.%202026%20a%CC%80%2001_05_11.png?v=2" alt="Épisode 1">
+      <div class="kicker">L’ALBUM</div>
+      <div class="available">MAINTENANT DISPONIBLE</div>
 
-    <section class="track-card" aria-label="Tracklist Épisode 1">
-      <div class="track-head"><h1>TRACKLIST</h1><span>ÉPISODE 1</span></div>
-      <div class="tracks">
-        <div class="track active"><span class="play">▶</span><span class="num">01</span><span class="title">INTRO</span><span class="time">—</span><span class="more">•••</span></div>
-        <div class="track"><span class="play">▶</span><span class="num">02</span><span class="title">CŒUR</span><span class="time">—</span><span class="more">•••</span></div>
-        <div class="track"><span class="play">▶</span><span class="num">03</span><span class="title">TOUT CE QUE J’AI</span><span class="time">—</span><span class="more">•••</span></div>
-        <div class="track"><span class="play">▶</span><span class="num">04</span><span class="title">90’</span><span class="time">—</span><span class="more">•••</span></div>
-        <div class="track"><span class="play">▶</span><span class="num">05</span><span class="title">TITRE 05</span><span class="time">—</span><span class="more">•••</span></div>
-        <div class="track"><span class="play">▶</span><span class="num">06</span><span class="title">TITRE 06</span><span class="time">—</span><span class="more">•••</span></div>
-        <div class="track"><span class="play">▶</span><span class="num">07</span><span class="title">TITRE 07</span><span class="time">—</span><span class="more">•••</span></div>
-        <div class="track"><span class="play">▶</span><span class="num">08</span><span class="title">TITRE 08</span><span class="time">—</span><span class="more">•••</span></div>
-        <div class="track"><span class="play">▶</span><span class="num">09</span><span class="title">TITRE 09</span><span class="time">—</span><span class="more">•••</span></div>
-        <div class="track"><span class="play">▶</span><span class="num">10</span><span class="title">TITRE 10</span><span class="time">—</span><span class="more">•••</span></div>
-        <div class="track"><span class="play">▶</span><span class="num">11</span><span class="title">TITRE 11</span><span class="time">—</span><span class="more">•••</span></div>
-        <div class="track"><span class="play">▶</span><span class="num">12</span><span class="title">TITRE 12</span><span class="time">—</span><span class="more">•••</span></div>
+      <div class="actions">
+        <a class="btn primary" href="#tracklist"><span>▶</span> ÉCOUTER L’ALBUM</a>
+        <a class="btn secondary" href="#tracklist">AJOUTER À MA PLAYLIST <span style="color:#ff3f9f">♥</span></a>
       </div>
-    </section>
-  </main>
 
-  <div class="player" aria-label="Lecteur album">
-    <div class="now">
-      <img class="cover-mini" src="ChatGPT%20Image%209%20sept.%202026%20a%CC%80%2020_30_16.png?v=1" alt="">
-      <div><strong>INTRO</strong><small>LGA — ÉPISODE 1</small></div>
-    </div>
-    <div class="controls">
-      <div class="transport"><button aria-label="Précédent">◀</button><button class="main" aria-label="Lecture">▶</button><button aria-label="Suivant">▶</button></div>
-      <div class="progress"><span></span></div>
-    </div>
-    <div class="player-side">MUSIC LIFE<br>REAL FOREVER</div>
-  </div>
+      <h1 class="track-title" id="tracklist">TRACKLIST</h1>
+      <div class="tracklist">
+        <div class="track"><span class="num">01</span><span class="name">INTRO</span><span class="time">—</span><span class="more">•••</span></div>
+        <div class="track"><span class="num">02</span><span class="name">CŒUR</span><span class="time">—</span><span class="more">•••</span></div>
+        <div class="track active"><span class="num">03</span><span class="name">TOUT CE QUE J’AI</span><span class="time">—</span><span class="more">•••</span></div>
+        <div class="track"><span class="num">04</span><span class="name">90’</span><span class="time">—</span><span class="more">•••</span></div>
+        <div class="track"><span class="num">05</span><span class="name">TITRE 05</span><span class="time">—</span><span class="more">•••</span></div>
+        <div class="track"><span class="num">06</span><span class="name">TITRE 06</span><span class="time">—</span><span class="more">•••</span></div>
+        <div class="track"><span class="num">07</span><span class="name">TITRE 07</span><span class="time">—</span><span class="more">•••</span></div>
+        <div class="track"><span class="num">08</span><span class="name">TITRE 08</span><span class="time">—</span><span class="more">•••</span></div>
+        <div class="track"><span class="num">09</span><span class="name">TITRE 09</span><span class="time">—</span><span class="more">•••</span></div>
+        <div class="track"><span class="num">10</span><span class="name">TITRE 10</span><span class="time">—</span><span class="more">•••</span></div>
+        <div class="track"><span class="num">11</span><span class="name">TITRE 11</span><span class="time">—</span><span class="more">•••</span></div>
+        <div class="track"><span class="num">12</span><span class="name">TITRE 12</span><span class="time">—</span><span class="more">•••</span></div>
+      </div>
+
+      <div class="tagline">DES ÉMOTIONS RÉELLES,<br>DES HISTOIRES VRAIES.</div>
+    </section>
+    <div class="right-space" aria-hidden="true"></div>
+  </main>
 </div>
 </body>
 </html>
