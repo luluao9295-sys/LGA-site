@@ -9,28 +9,25 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:100%;height:100%;background:#020103}
 body{overflow:hidden;font-family:Arial,Helvetica,sans-serif}
-.actualites-page{position:relative;width:100%;height:100svh;min-height:620px;overflow:hidden;background:#020103;isolation:isolate}
-.scene{position:absolute;inset:0;overflow:hidden;z-index:0;background:#020103}
-.scene-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;filter:saturate(1.05) brightness(.92)}
-.scene-car{position:absolute;left:0;bottom:0;width:68%;max-width:none;z-index:2;display:block;mix-blend-mode:normal}
-.scene-person{position:absolute;left:50%;bottom:-1.5%;width:41%;max-width:none;transform:translateX(-50%);z-index:3;display:block}
-.scene-smoke{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.28;z-index:4;pointer-events:none}
-.scene::after{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.24) 0,rgba(0,0,0,.03) 20%,rgba(0,0,0,0) 62%,rgba(0,0,0,.12) 100%)}
+.actualites-page{position:relative;width:100%;height:100svh;min-height:620px;overflow:hidden;background:#020103}
+.scene{position:absolute;inset:0;overflow:hidden;background:#020103}
+.scene-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.scene-car{position:absolute;z-index:2;display:block;max-width:none}
+.scene-person{position:absolute;z-index:3;display:block;max-width:none}
 .lga-menu{position:absolute;top:2.8svh;left:3.2vw;right:3.2vw;margin:0;z-index:100}
-@media(min-width:1001px){.scene-bg{object-position:center}.scene-car{width:65%;left:-3%;bottom:-2%}.scene-person{width:39%;left:49%;bottom:-2%}}
-@media(min-width:601px) and (max-width:1000px){.scene-bg{object-position:center}.scene-car{width:78%;left:-11%;bottom:1%}.scene-person{width:50%;left:52%;bottom:-1%}.lga-menu{top:2.7svh;left:18px;right:18px;margin:0}}
-@media(max-width:600px){.actualites-page{min-height:640px}.scene-bg{width:auto;height:100%;min-width:100%;left:50%;transform:translateX(-50%);object-fit:cover;object-position:48% center}.scene-car{width:118vw;left:-43vw;bottom:10svh}.scene-person{width:76vw;left:53%;bottom:4svh}.scene-smoke{opacity:.22}.lga-menu{top:2.7svh;left:9px;right:9px;margin:0}}
-@media(max-width:390px){.scene-car{width:122vw;left:-46vw;bottom:9svh}.scene-person{width:79vw;left:54%;bottom:3.5svh}.lga-menu{left:5px;right:5px}}
-@media(max-height:520px) and (orientation:landscape){.scene-car{width:67%;left:-3%;bottom:-6%}.scene-person{width:38%;left:50%;bottom:-6%}.lga-menu{top:10px}}
+@media(min-width:1001px){.scene-car{width:64%;left:-2%;bottom:-1%}.scene-person{width:39%;left:49%;bottom:-2%;transform:translateX(-50%)}}
+@media(min-width:601px) and (max-width:1000px){.scene-bg{object-position:47% center}.scene-car{width:80%;left:-14%;bottom:0}.scene-person{width:51%;left:52%;bottom:0;transform:translateX(-50%)}.lga-menu{top:2.7svh;left:18px;right:18px;margin:0}}
+@media(max-width:600px){.actualites-page{min-height:640px}.scene-bg{width:100%;height:100%;object-fit:cover;object-position:43% center}.scene-car{width:105vw;left:-43vw;bottom:5svh}.scene-person{height:73svh;width:auto;left:51%;bottom:1svh;transform:translateX(-50%)}.lga-menu{top:2.7svh;left:9px;right:9px;margin:0}}
+@media(max-width:390px){.scene-bg{object-position:42% center}.scene-car{width:108vw;left:-46vw;bottom:5svh}.scene-person{height:72svh;left:52%;bottom:1svh}.lga-menu{left:5px;right:5px}}
+@media(max-height:520px) and (orientation:landscape){.scene-car{width:65%;left:-3%;bottom:-5%}.scene-person{height:88svh;width:auto;left:50%;bottom:-5%;transform:translateX(-50%)}.lga-menu{top:10px}}
 </style>
 </head>
 <body>
 <div class="actualites-page">
   <div class="scene" aria-hidden="true">
-    <img class="scene-bg" src="19_decor_garage_sans_colonne_droite.svg?v=8" alt="">
-    <img class="scene-car" src="13_voiture_complete.svg?v=8" alt="">
-    <img class="scene-person" src="12_personnage_debout.svg?v=8" alt="">
-    <img class="scene-smoke" src="18_fumee_ambiance_centre.svg?v=8" alt="">
+    <img class="scene-bg" src="19_decor_garage_sans_colonne_droite.svg?v=9" alt="">
+    <img class="scene-car" src="13_voiture_complete.svg?v=9" alt="">
+    <img class="scene-person" src="12_personnage_debout.svg?v=9" alt="">
   </div>
   <header class="lga-menu">
     <nav class="lga-nav">
