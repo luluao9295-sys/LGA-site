@@ -5,28 +5,58 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>LGA — Actualités</title>
 <style>
-:root{--pink:#ff2d95;--black:#030205}
+:root{--pink:#ff2d95;--pink-soft:#ff79bd;--black:#030205}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{min-height:100%;background:var(--black)}
 body{overflow-x:hidden;color:#fff;font-family:Arial,Helvetica,sans-serif}
 .actualites-page{position:relative;min-height:100svh;overflow:hidden;background:var(--black)}
-.scene{position:absolute;inset:0;overflow:hidden;background:var(--black)}
+.scene{position:absolute;inset:0 0 auto;height:100svh;overflow:hidden;background:var(--black)}
 .scene-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.personnage{position:absolute;z-index:10;left:50%;bottom:-2svh;transform:translateX(-50%);height:82svh;width:auto;max-width:82vw;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 18px 30px rgba(0,0,0,.48)) drop-shadow(0 0 16px rgba(255,31,132,.22));pointer-events:none}
-header{position:absolute;z-index:30;top:2.8svh;left:3.2vw;right:3.2vw;height:7.5svh;min-height:66px;max-height:82px;background:linear-gradient(180deg,rgba(12,10,12,.78),rgba(2,2,3,.72));border:1px solid rgba(255,255,255,.10);border-radius:28px;display:flex;align-items:center;padding:0 1vw;box-shadow:0 14px 42px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.07);backdrop-filter:blur(20px) saturate(125%);-webkit-backdrop-filter:blur(20px) saturate(125%)}
+.scene-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.02),rgba(0,0,0,.08) 50%,rgba(0,0,0,.34))}
+.personnage{position:absolute;z-index:10;left:34%;bottom:-2svh;transform:translateX(-50%);height:82svh;width:auto;max-width:65vw;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 18px 30px rgba(0,0,0,.48)) drop-shadow(0 0 16px rgba(255,31,132,.22));pointer-events:none}
+header{position:absolute;z-index:40;top:2.8svh;left:3.2vw;right:3.2vw;height:7.5svh;min-height:66px;max-height:82px;background:linear-gradient(180deg,rgba(12,10,12,.78),rgba(2,2,3,.72));border:1px solid rgba(255,255,255,.10);border-radius:28px;display:flex;align-items:center;padding:0 1vw;box-shadow:0 14px 42px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.07);backdrop-filter:blur(20px) saturate(125%);-webkit-backdrop-filter:blur(20px) saturate(125%)}
 .nav{display:flex;align-items:center;justify-content:space-evenly;width:100%;height:100%;white-space:nowrap}
 .nav a{color:rgba(255,255,255,.88);text-decoration:none;font-size:18px;font-weight:700;letter-spacing:.03em;position:relative;height:100%;display:flex;align-items:center;padding:0 12px;transition:color .18s ease,text-shadow .18s ease}
 .nav a:hover{color:#fff}
 .nav a.active{color:#fff;text-shadow:0 0 14px rgba(255,45,149,.45)}
 .nav a:not(:last-child):before{display:none}
 .nav a.active:after{content:"";position:absolute;left:27%;right:27%;bottom:10px;height:2px;border-radius:99px;background:linear-gradient(90deg,transparent,#ff70ba 25%,#ff2d95 50%,#ff70ba 75%,transparent);box-shadow:0 0 7px rgba(255,45,149,.85),0 0 16px rgba(255,45,149,.35)}
-@media(max-width:900px){
-  .scene-bg{object-position:center}
-  .personnage{height:78svh;max-width:92vw;bottom:-1svh}
+.news-panel{position:relative;z-index:25;width:min(39vw,650px);min-height:100svh;margin-left:auto;margin-right:4vw;padding-top:17svh;padding-bottom:5svh;display:flex;flex-direction:column;gap:16px}
+.news-card,.release-card{background:linear-gradient(145deg,rgba(7,3,8,.91),rgba(1,1,2,.94));border:1px solid rgba(255,45,149,.72);border-radius:18px;box-shadow:0 14px 34px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.news-card{min-height:145px;padding:16px;display:grid;grid-template-columns:145px 1fr 46px;align-items:center;gap:20px;color:#fff;text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.news-card:hover{transform:translateY(-2px);border-color:var(--pink-soft);box-shadow:0 16px 38px rgba(0,0,0,.4),0 0 18px rgba(255,45,149,.16)}
+.news-thumb{width:145px;height:108px;border-radius:12px;object-fit:cover;border:1px solid rgba(255,45,149,.75)}
+.news-copy strong{display:block;font-size:20px;letter-spacing:.09em;margin-bottom:9px}
+.news-copy span{display:block;font-size:13px;letter-spacing:.14em;color:#f7eaf2;margin-bottom:12px}
+.news-copy time{font-size:12px;letter-spacing:.18em;color:var(--pink-soft)}
+.news-arrow{width:42px;height:42px;border:2px solid var(--pink-soft);border-radius:50%;display:grid;place-items:center;color:var(--pink-soft);font-size:25px;line-height:1}
+.release-card{min-height:112px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.release-copy small{display:block;font-size:11px;letter-spacing:.25em;color:#fff;margin-bottom:9px}
+.release-copy strong{display:block;color:var(--pink-soft);font-size:18px;letter-spacing:.16em}
+.release-mark{width:56px;height:2px;background:linear-gradient(90deg,transparent,var(--pink),transparent);box-shadow:0 0 12px var(--pink)}
+@media(max-width:1050px){
+  .personnage{left:31%;height:78svh;max-width:66vw}
+  .news-panel{width:43vw;margin-right:3vw}
+  .news-card{grid-template-columns:110px 1fr 38px;gap:14px;min-height:126px}
+  .news-thumb{width:110px;height:88px}
+  .news-copy strong{font-size:16px}
+  .news-arrow{width:36px;height:36px}
 }
-@media(max-width:600px){
-  .scene-bg{object-position:50% center}
-  .personnage{height:72svh;max-width:96vw;bottom:-1svh}
+@media(max-width:700px){
+  .actualites-page{overflow:visible;padding-bottom:24px}
+  .scene{height:100svh}
+  .scene-bg{object-position:center}
+  .scene-shade{background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.72) 90%,#030205 100%)}
+  .personnage{left:50%;height:72svh;max-width:96vw;bottom:-1svh}
+  .news-panel{width:auto;min-height:0;margin:0;padding:calc(100svh + 18px) 14px 20px;gap:12px}
+  .news-card{grid-template-columns:92px 1fr 34px;gap:12px;min-height:112px;padding:12px;border-radius:15px}
+  .news-thumb{width:92px;height:78px;border-radius:10px}
+  .news-copy strong{font-size:15px;margin-bottom:6px}
+  .news-copy span{font-size:10px;margin-bottom:8px;letter-spacing:.1em}
+  .news-copy time{font-size:10px}
+  .news-arrow{width:32px;height:32px;font-size:20px}
+  .release-card{min-height:94px;padding:18px;border-radius:15px}
+  .release-copy strong{font-size:14px}
   header{top:2.7svh;left:9px;right:9px;height:7.2svh;min-height:64px;border-radius:22px;padding:0 3px}
   .nav a{font-size:clamp(10px,3vw,13px);padding:0 4px}
 }
@@ -34,10 +64,9 @@ header{position:absolute;z-index:30;top:2.8svh;left:3.2vw;right:3.2vw;height:7.5
   .personnage{height:70svh;max-width:98vw}
   header{left:5px;right:5px}
   .nav a{font-size:9px;padding:0 2px}
-}
-@media(max-height:520px) and (orientation:landscape){
-  header{top:10px}
-  .personnage{height:88svh;bottom:-12svh}
+  .news-panel{padding-left:9px;padding-right:9px}
+  .news-card{grid-template-columns:78px 1fr 30px;gap:9px}
+  .news-thumb{width:78px;height:68px}
 }
 </style>
 </head>
@@ -45,6 +74,7 @@ header{position:absolute;z-index:30;top:2.8svh;left:3.2vw;right:3.2vw;height:7.5
 <div class="actualites-page">
   <div class="scene" aria-hidden="true">
     <img class="scene-bg" src="1E31856B-1175-422D-A120-B82D2D4653E6.png?v=1" alt="">
+    <div class="scene-shade"></div>
     <img class="personnage" src="E484405E-377C-4823-BC87-4D76AB78D579.png?v=1" alt="">
   </div>
   <header>
@@ -56,6 +86,27 @@ header{position:absolute;z-index:30;top:2.8svh;left:3.2vw;right:3.2vw;height:7.5
       <a href="contact.html">CONTACT</a>
     </nav>
   </header>
+  <main class="news-panel">
+    <a class="news-card" href="album.html">
+      <img class="news-thumb" src="1E31856B-1175-422D-A120-B82D2D4653E6.png" alt="">
+      <span class="news-copy"><strong>ÉPISODE 1</strong><span>BIENTÔT DISPONIBLE</span><time>PROCHAINEMENT</time></span>
+      <span class="news-arrow" aria-hidden="true">›</span>
+    </a>
+    <a class="news-card" href="shooting.html">
+      <img class="news-thumb" src="E484405E-377C-4823-BC87-4D76AB78D579.png" alt="">
+      <span class="news-copy"><strong>SHOOTING</strong><span>NOUVELLES PHOTOS</span><time>À VENIR</time></span>
+      <span class="news-arrow" aria-hidden="true">›</span>
+    </a>
+    <a class="news-card" href="album.html">
+      <img class="news-thumb" src="1E31856B-1175-422D-A120-B82D2D4653E6.png" alt="">
+      <span class="news-copy"><strong>EN STUDIO</strong><span>NOUVEAUX SONS</span><time>EN PRÉPARATION</time></span>
+      <span class="news-arrow" aria-hidden="true">›</span>
+    </a>
+    <section class="release-card" aria-label="Sortie du nouvel album">
+      <span class="release-copy"><small>NOUVEL ALBUM</small><strong>BIENTÔT DISPONIBLE</strong></span>
+      <span class="release-mark" aria-hidden="true"></span>
+    </section>
+  </main>
 </div>
 </body>
 </html>
