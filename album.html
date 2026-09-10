@@ -11,14 +11,22 @@ html,body{width:100%;height:100%;background:#030205}
 body{overflow:hidden}
 .album-page{position:relative;width:100%;height:100svh;overflow:hidden;background:#030205}
 .album-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;z-index:0}
+.album-artist{position:absolute;z-index:4;right:4vw;bottom:-2svh;height:84svh;max-width:52vw;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 18px 40px rgba(0,0,0,.55))}
 .lga-menu{position:relative;z-index:10}
-@media(max-width:760px) and (orientation:portrait){.album-bg{object-position:center center}}
-@media(orientation:landscape) and (max-height:700px){.album-bg{object-position:center center}}
+@media(max-width:760px) and (orientation:portrait){
+  .album-bg{object-position:center center}
+  .album-artist{right:-10vw;bottom:-1svh;height:69svh;max-width:92vw}
+}
+@media(orientation:landscape) and (max-height:700px){
+  .album-bg{object-position:center center}
+  .album-artist{right:2vw;bottom:-8svh;height:82svh;max-width:52vw}
+}
 </style>
 </head>
 <body>
 <div class="album-page">
   <img class="album-bg" src="ChatGPT%20Image%209%20sept.%202026%20a%CC%80%2020_30_16.png?v=1" alt="">
+  <img class="album-artist" src="12_personnage_debout.svg?v=2" alt="LGA">
   <header class="lga-menu">
     <nav class="lga-nav">
       <a href="index.html">ACCUEIL</a>
