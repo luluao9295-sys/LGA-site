@@ -10,15 +10,15 @@
 html,body{width:100%;height:100%;background:#030205}
 body{overflow:hidden}
 .album-page{position:relative;width:100%;height:100svh;overflow:hidden;background:#030205}
-.album-bg{position:absolute;inset:0;background-image:url('album-decor-lga.svg?v=3');background-size:cover;background-repeat:no-repeat;background-position:center center}
+.album-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;z-index:0}
 .lga-menu{position:relative;z-index:10}
-@media(max-width:760px) and (orientation:portrait){.album-bg{background-position:center center}}
-@media(orientation:landscape) and (max-height:700px){.album-bg{background-position:center center}}
+@media(max-width:760px) and (orientation:portrait){.album-bg{object-position:center center}}
+@media(orientation:landscape) and (max-height:700px){.album-bg{object-position:center center}}
 </style>
 </head>
 <body>
 <div class="album-page">
-  <div class="album-bg" aria-hidden="true"></div>
+  <img class="album-bg" src="album-decor-lga.svg?v=4" alt="">
   <header class="lga-menu">
     <nav class="lga-nav">
       <a href="index.html">ACCUEIL</a>
