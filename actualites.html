@@ -7,69 +7,21 @@
 <link rel="stylesheet" href="menu-lga.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;min-height:100%;background:#020103}
-body{font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
-.actualites-page{position:relative;width:100%;height:100svh;min-height:620px;overflow:hidden;background:#020103;isolation:isolate}
-.desktop-master{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0}
-.mobile-stage{display:none}
+html,body{width:100%;height:100%;background:#020103}
+body{overflow:hidden;font-family:Arial,Helvetica,sans-serif}
+.actualites-page{position:relative;width:100%;height:100svh;min-height:620px;overflow:hidden;background:#020103}
+.hero{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 57%;display:block}
+.hero-mask{position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,1,3,.38) 0,rgba(2,1,3,.08) 13%,rgba(2,1,3,0) 30%);pointer-events:none}
 .lga-menu{position:absolute;top:2.8svh;left:3.2vw;right:3.2vw;margin:0;z-index:100}
-
-@media(min-width:1001px){
-  .desktop-master{display:block}
-}
-
-@media(min-width:601px) and (max-width:1000px){
-  .desktop-master{display:block;object-fit:cover;object-position:center}
-  .lga-menu{top:2.7svh;left:18px;right:18px;margin:0}
-}
-
-@media(max-width:600px){
-  body{overflow:hidden;background:#030103}
-  .actualites-page{height:100svh;min-height:640px;background:#050105}
-  .desktop-master{display:none}
-  .mobile-stage{display:block;position:absolute;inset:0;overflow:hidden;background:#050105}
-  .mobile-stage::before{content:"";position:absolute;inset:0;background:url('20_decor_complet_sans_menu.svg?v=6') 44% center/cover no-repeat;filter:brightness(.72) saturate(1.16);transform:scale(1.05);z-index:0}
-  .mobile-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,0) 18%,rgba(0,0,0,.04) 82%,rgba(0,0,0,.22) 100%);z-index:1;pointer-events:none}
-  .m{position:absolute;display:block;z-index:4;pointer-events:none;max-width:none}
-  .m-title{top:13.4svh;left:1.5vw;width:50vw;filter:drop-shadow(0 0 12px rgba(255,0,105,.28));-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%)}
-  .m-sub{top:25.1svh;left:2.7vw;width:25vw;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 94%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 94%,transparent 100%)}
-  .m-quote{top:31svh;left:2.7vw;width:25.5vw;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 94%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 94%,transparent 100%)}
-  .m-person{top:24.2svh;left:7vw;width:51vw;z-index:3;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 3%,#000 93%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 3%,#000 93%,transparent 100%)}
-  .m-cards{top:31.3svh;right:1.7vw;width:45.7vw;z-index:6;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 4%,#000 98%);mask-image:linear-gradient(to right,transparent 0,#000 4%,#000 98%);filter:drop-shadow(0 12px 24px rgba(0,0,0,.28))}
-  .m-bottom{left:2.8vw;bottom:8.2svh;width:30vw;z-index:7;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 94%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 94%,transparent 100%)}
-  .lga-menu{top:2.7svh;left:9px;right:9px;margin:0;z-index:100}
-}
-
-@media(max-width:390px){
-  .m-title{top:13.1svh;width:51vw}
-  .m-sub{top:24.8svh;width:25.5vw}
-  .m-quote{top:30.6svh;width:26vw}
-  .m-person{top:24.4svh;left:5.5vw;width:52vw}
-  .m-cards{top:31.5svh;right:1vw;width:46.5vw}
-  .m-bottom{bottom:8.5svh;width:31vw}
-  .lga-menu{left:5px;right:5px}
-}
-
-@media(max-height:520px) and (orientation:landscape){
-  .desktop-master{display:block;object-fit:cover;object-position:center}
-  .mobile-stage{display:none}
-  .lga-menu{top:10px}
-}
+@media(max-width:1000px){.hero{object-position:center 55%}.lga-menu{top:2.7svh;left:18px;right:18px;margin:0}}
+@media(max-width:600px){.actualites-page{min-height:640px}.hero{width:auto;height:100%;min-width:100%;left:50%;right:auto;transform:translateX(-50%);object-fit:cover;object-position:center 55%}.lga-menu{top:2.7svh;left:9px;right:9px;margin:0}}
+@media(max-width:390px){.lga-menu{left:5px;right:5px}}
 </style>
 </head>
 <body>
 <div class="actualites-page">
-  <img class="desktop-master" src="20_decor_complet_sans_menu.svg?v=6" alt="Actualités LGA">
-
-  <div class="mobile-stage" aria-hidden="true">
-    <img class="m m-title" src="01_titre_actualites.svg?v=6" alt="">
-    <img class="m m-sub" src="02_sous_titre_toute_actu.svg?v=6" alt="">
-    <img class="m m-quote" src="03_citation_projet.svg?v=6" alt="">
-    <img class="m m-person" src="12_personnage_debout.svg?v=6" alt="">
-    <img class="m m-cards" src="11_colonne_actualites_complete.svg?v=6" alt="">
-    <img class="m m-bottom" src="04_phrase_bas_emotions.svg?v=6" alt="">
-  </div>
-
+  <img class="hero" src="actualites-hero-final.svg?v=871441e8" alt="LGA Actualités">
+  <div class="hero-mask"></div>
   <header class="lga-menu">
     <nav class="lga-nav">
       <a href="index.html">ACCUEIL</a>
