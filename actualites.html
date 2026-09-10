@@ -10,22 +10,28 @@
 html,body{width:100%;height:100%;background:#020103}
 body{overflow:hidden;font-family:Arial,Helvetica,sans-serif}
 .actualites-page{position:relative;width:100%;height:100svh;min-height:620px;overflow:hidden;background:#020103;isolation:isolate}
-.bg{position:absolute;inset:-35px;z-index:-2;background:url('20_decor_complet_sans_menu.svg?v=3') center/cover no-repeat;filter:blur(24px) brightness(.45) saturate(1.1);transform:scale(1.08)}
-.hero{position:absolute;z-index:0;display:block;max-width:none}
-.hero-mask{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(2,1,3,.32) 0,rgba(2,1,3,.05) 17%,transparent 34%);pointer-events:none}
+.scene{position:absolute;inset:0;overflow:hidden;z-index:0;background:#020103}
+.scene-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;display:block;filter:saturate(1.05) brightness(.92)}
+.scene-car{position:absolute;left:0;bottom:0;width:68%;max-width:none;z-index:2;display:block;mix-blend-mode:normal}
+.scene-person{position:absolute;left:50%;bottom:-1.5%;width:41%;max-width:none;transform:translateX(-50%);z-index:3;display:block}
+.scene-smoke{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.28;z-index:4;pointer-events:none}
+.scene::after{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.24) 0,rgba(0,0,0,.03) 20%,rgba(0,0,0,0) 62%,rgba(0,0,0,.12) 100%)}
 .lga-menu{position:absolute;top:2.8svh;left:3.2vw;right:3.2vw;margin:0;z-index:100}
-@media(min-width:1001px){.hero{inset:0;width:100%;height:100%;object-fit:cover;object-position:center}}
-@media(min-width:601px) and (max-width:1000px){.hero{left:50%;top:52%;width:100%;height:auto;max-height:84svh;transform:translate(-50%,-50%);object-fit:contain}.lga-menu{top:2.7svh;left:18px;right:18px;margin:0}}
-@media(max-width:600px){.actualites-page{min-height:640px}.bg{inset:-50px;filter:blur(28px) brightness(.36) saturate(1.12)}.hero{left:50%;top:52%;width:100%;height:auto;max-height:79svh;transform:translate(-50%,-50%);object-fit:contain}.lga-menu{top:2.7svh;left:9px;right:9px;margin:0}}
-@media(max-width:390px){.hero{top:53%;max-height:77svh}.lga-menu{left:5px;right:5px}}
-@media(max-height:520px) and (orientation:landscape){.hero{inset:0;width:100%;height:100%;max-height:none;transform:none;object-fit:cover}.lga-menu{top:10px}}
+@media(min-width:1001px){.scene-bg{object-position:center}.scene-car{width:65%;left:-3%;bottom:-2%}.scene-person{width:39%;left:49%;bottom:-2%}}
+@media(min-width:601px) and (max-width:1000px){.scene-bg{object-position:center}.scene-car{width:78%;left:-11%;bottom:1%}.scene-person{width:50%;left:52%;bottom:-1%}.lga-menu{top:2.7svh;left:18px;right:18px;margin:0}}
+@media(max-width:600px){.actualites-page{min-height:640px}.scene-bg{width:auto;height:100%;min-width:100%;left:50%;transform:translateX(-50%);object-fit:cover;object-position:48% center}.scene-car{width:118vw;left:-43vw;bottom:10svh}.scene-person{width:76vw;left:53%;bottom:4svh}.scene-smoke{opacity:.22}.lga-menu{top:2.7svh;left:9px;right:9px;margin:0}}
+@media(max-width:390px){.scene-car{width:122vw;left:-46vw;bottom:9svh}.scene-person{width:79vw;left:54%;bottom:3.5svh}.lga-menu{left:5px;right:5px}}
+@media(max-height:520px) and (orientation:landscape){.scene-car{width:67%;left:-3%;bottom:-6%}.scene-person{width:38%;left:50%;bottom:-6%}.lga-menu{top:10px}}
 </style>
 </head>
 <body>
 <div class="actualites-page">
-  <div class="bg"></div>
-  <img class="hero" src="20_decor_complet_sans_menu.svg?v=3" alt="LGA Actualités">
-  <div class="hero-mask"></div>
+  <div class="scene" aria-hidden="true">
+    <img class="scene-bg" src="19_decor_garage_sans_colonne_droite.svg?v=8" alt="">
+    <img class="scene-car" src="13_voiture_complete.svg?v=8" alt="">
+    <img class="scene-person" src="12_personnage_debout.svg?v=8" alt="">
+    <img class="scene-smoke" src="18_fumee_ambiance_centre.svg?v=8" alt="">
+  </div>
   <header class="lga-menu">
     <nav class="lga-nav">
       <a href="index.html">ACCUEIL</a>
