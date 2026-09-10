@@ -6,18 +6,73 @@
 <title>LGA — Actualités</title>
 <link rel="stylesheet" href="menu-lga.css">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}html,body{width:100%;min-height:100%;background:#020103}body{overflow-x:hidden;font-family:Arial,Helvetica,sans-serif}.actualites-page{position:relative;width:100%;min-height:100svh;overflow:hidden;background:#020103;isolation:isolate}.actualites-page::before{content:"";position:absolute;inset:-35px;z-index:-2;background:url('20_decor_complet_sans_menu.svg?v=3') center/cover no-repeat;filter:blur(24px) brightness(.32);transform:scale(1.08)}.actualites-page::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.12))}.actualites-master{position:absolute;display:block;z-index:0;max-width:none}.lga-menu{position:absolute;top:2.8svh;left:3.2vw;right:3.2vw;margin:0;z-index:100}
-@media(min-width:1001px){.actualites-page{height:100svh}.actualites-master{left:50%;top:53%;width:100%;height:auto;min-height:0;transform:translate(-50%,-50%);object-fit:contain}}
-@media(min-width:601px) and (max-width:1000px){.actualites-page{height:100svh}.actualites-master{left:50%;top:55%;width:100%;height:auto;transform:translate(-50%,-50%)}.lga-menu{top:2.7svh;left:18px;right:18px;margin:0}}
-@media(max-width:600px){body{overflow-y:auto}.actualites-page{height:100svh;min-height:640px}.actualites-page::before{filter:blur(25px) brightness(.25)}.actualites-master{left:50%;top:51%;width:100%;height:auto;transform:translate(-50%,-50%)}.lga-menu{top:2.7svh;left:9px;right:9px;margin:0}}
-@media(max-width:390px){.actualites-master{top:50.5%}.lga-menu{left:5px;right:5px}}
-@media(max-height:520px) and (orientation:landscape){.actualites-page{height:100svh;min-height:100svh}.actualites-master{left:50%;top:54%;width:100%;height:auto;transform:translate(-50%,-50%)}.lga-menu{top:10px}}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;min-height:100%;background:#020103}
+body{overflow:hidden;font-family:Arial,Helvetica,sans-serif}
+.actualites-page{position:relative;width:100%;height:100svh;min-height:620px;overflow:hidden;background:#020103;isolation:isolate}
+.bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.mobile-layer{display:none}
+.lga-menu{position:absolute;top:2.8svh;left:3.2vw;right:3.2vw;margin:0;z-index:100}
+
+@media(min-width:1001px){
+  .bg{object-fit:cover;object-position:center center}
+}
+
+@media(min-width:601px) and (max-width:1000px){
+  .bg{object-fit:cover;object-position:center center}
+  .lga-menu{top:2.7svh;left:18px;right:18px;margin:0}
+}
+
+@media(max-width:600px){
+  .actualites-page{height:100svh;min-height:640px;background:#060106}
+  .bg{object-fit:cover;object-position:44% center;filter:brightness(.56) saturate(1.15);transform:scale(1.02)}
+  .mobile-layer{display:block;position:absolute;z-index:12;pointer-events:none}
+  .mobile-title{top:16.5svh;left:2.5vw;width:51vw}
+  .mobile-sub{top:26.3svh;left:4vw;width:30vw}
+  .mobile-quote{top:32.2svh;left:4vw;width:31vw}
+  .mobile-person{top:27svh;left:0;width:57vw;height:auto}
+  .mobile-cards{top:28.5svh;right:1.5vw;width:50vw;height:auto}
+  .mobile-bottom{left:4vw;bottom:7.8svh;width:35vw}
+  .lga-menu{top:2.7svh;left:9px;right:9px;margin:0}
+}
+
+@media(max-width:390px){
+  .mobile-title{top:16svh;width:53vw}
+  .mobile-sub{top:25.7svh;width:31vw}
+  .mobile-quote{top:31.8svh;width:32vw}
+  .mobile-person{top:27.5svh;width:58vw}
+  .mobile-cards{top:29svh;width:51vw;right:1vw}
+  .mobile-bottom{bottom:8.5svh;width:36vw}
+  .lga-menu{left:5px;right:5px}
+}
+
+@media(max-height:520px) and (orientation:landscape){
+  .mobile-layer{display:none}
+  .bg{object-fit:cover;object-position:center}
+  .lga-menu{top:10px}
+}
 </style>
 </head>
 <body>
 <div class="actualites-page">
-<img class="actualites-master" src="20_decor_complet_sans_menu.svg?v=3" alt="Actualités LGA">
-<header class="lga-menu"><nav class="lga-nav"><a href="index.html">ACCUEIL</a><a class="active" href="actualites.html">ACTUALITÉS</a><a href="album.html">ALBUM</a><a href="apropos.html">À PROPOS</a><a href="contact.html">CONTACT</a></nav></header>
+  <img class="bg" src="20_decor_complet_sans_menu.svg?v=4" alt="Actualités LGA">
+
+  <img class="mobile-layer mobile-title" src="01_titre_actualites.svg?v=4" alt="Actualités">
+  <img class="mobile-layer mobile-sub" src="02_sous_titre_toute_actu.svg?v=4" alt="Toute l'actu de LGA">
+  <img class="mobile-layer mobile-quote" src="03_citation_projet.svg?v=4" alt="Un projet, une vision, Épisode 1">
+  <img class="mobile-layer mobile-person" src="12_personnage_debout.svg?v=4" alt="LGA">
+  <img class="mobile-layer mobile-cards" src="11_colonne_actualites_complete.svg?v=4" alt="Actualités LGA">
+  <img class="mobile-layer mobile-bottom" src="04_phrase_bas_emotions.svg?v=4" alt="Des émotions réelles, des histoires vraies">
+
+  <header class="lga-menu">
+    <nav class="lga-nav">
+      <a href="index.html">ACCUEIL</a>
+      <a class="active" href="actualites.html">ACTUALITÉS</a>
+      <a href="album.html">ALBUM</a>
+      <a href="apropos.html">À PROPOS</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
 </div>
 </body>
 </html>
